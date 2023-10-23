@@ -77,7 +77,7 @@ function calculateCompatibility() {
 		5, /* strongly agree */
 	]
 
-	const MAX_SCORE = 15;
+	const MAX_SCORE = 25;
 
 	let question1Response = document.getElementById("q1").selectedOptions[0].value;
 	let question2Response = document.getElementById("q2").selectedOptions[0].value;
@@ -113,7 +113,7 @@ function calculateCompatibility() {
 	let question1Compatibility = 5 - Math.abs(question1Response - DESIRED_RESPONSE[0]);
 	let question2Compatibility = 5 - Math.abs(question2Response - DESIRED_RESPONSE[1]);
 	let question3Compatibility = 5 - Math.abs(question3Response - DESIRED_RESPONSE[2]);
-    let question4Compatibility = 5 - Math.abs(question4Response - DESIRED_RESPONSE[3]);
+    	let question4Compatibility = 5 - Math.abs(question4Response - DESIRED_RESPONSE[3]);
 	let question5Compatibility = 5 - Math.abs(question5Response - DESIRED_RESPONSE[4]);
 
 	console.log("c1="+question1Compatibility);
