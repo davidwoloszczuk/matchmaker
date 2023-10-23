@@ -14,7 +14,7 @@
 	<select id="q1">
 		<option value="5">Strongly Agree</option>
 		<option value="4">Agree</option>
-		<option value="3">Neither agree nor disagree</option>
+		<option value="3">Neutral</option>
 		<option value="2">Disagree</option>
 		<option value="1">Strongly Disagree</option>
 	</select>
@@ -24,7 +24,7 @@
 	<select id="q2">
 		<option value="5">Strongly Agree</option>
 		<option value="4">Agree</option>
-		<option value="3">Neither agree nor disagree</option>
+		<option value="3">Neutral</option>
 		<option value="2">Disagree</option>
 		<option value="1">Strongly Disagree</option>
 	</select>
@@ -34,7 +34,7 @@
 	<select id="q3">
 		<option value="5">Strongly Agree</option>
 		<option value="4">Agree</option>
-		<option value="3">Neither agree nor disagree</option>
+		<option value="3">Neutral</option>
 		<option value="2">Disagree</option>
 		<option value="1">Strongly Disagree</option>
 	</select>
@@ -44,7 +44,7 @@
 	<select id="q4">
 		<option value="5">Strongly Agree</option>
 		<option value="4">Agree</option>
-		<option value="3">Neither agree nor disagree</option>
+		<option value="3">Neutral</option>
 		<option value="2">Disagree</option>
 		<option value="1">Strongly Disagree</option>
 	</select>
@@ -54,7 +54,7 @@
 	<select id="q5">
 		<option value="5">Strongly Agree</option>
 		<option value="4">Agree</option>
-		<option value="3">Neither agree nor disagree</option>
+		<option value="3">Neutral</option>
 		<option value="2">Disagree</option>
 		<option value="1">Strongly Disagree</option>
 	</select>
@@ -64,15 +64,17 @@
 	<p id="compatibility"></p>
 
 <script>
-console.log("Starting Matchmaker Lite...");
+console.log("Starting Matchmaker");
 
 function calculateCompatibility() {
 	console.log("calculateCompatibility()");
 
 	const DESIRED_RESPONSE = [
 		5, /* strongly agree */
-		2, /* disagree */
-		1, /* strongly disagree */
+		5, /* strongly agree */
+        5, /* strongly agree */
+        1, /* strongly disagree */
+		5, /* strongly agree */
 	]
 
 	const MAX_SCORE = 15;
@@ -111,8 +113,8 @@ function calculateCompatibility() {
 	let question1Compatibility = 5 - Math.abs(question1Response - DESIRED_RESPONSE[0]);
 	let question2Compatibility = 5 - Math.abs(question2Response - DESIRED_RESPONSE[1]);
 	let question3Compatibility = 5 - Math.abs(question3Response - DESIRED_RESPONSE[2]);
-    let question4Compatibility = 5 - Math.abs(question4Response - DESIRED_RESPONSE[1]);
-	let question5Compatibility = 5 - Math.abs(question5Response - DESIRED_RESPONSE[2]);
+    let question4Compatibility = 5 - Math.abs(question4Response - DESIRED_RESPONSE[3]);
+	let question5Compatibility = 5 - Math.abs(question5Response - DESIRED_RESPONSE[4]);
 
 	console.log("c1="+question1Compatibility);
 	console.log("c2="+question2Compatibility);
